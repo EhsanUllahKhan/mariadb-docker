@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  mariadb:
+    image: mariadb
+    restart: on-failure
+    environment:
+      - MYSQL_USER=ehsan
+      - MYSQL_PASSWORD=ehsan
+      - MYSQL_DATABASE=vmi_db
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
